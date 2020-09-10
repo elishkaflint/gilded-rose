@@ -29,7 +29,7 @@ class GildedRoseTest {
         }
 
         @Test
-        public void minimumQualityIsZero() {
+        public void ifZero_staysZero() {
             Item[] items = new Item[] { new Item("foo", 5, 0) };
             GildedRose app = new GildedRose(items);
             app.updateQuality();
@@ -61,11 +61,11 @@ class GildedRoseTest {
         }
 
         @Test
-        public void minimumQualityIsZero() {
+        public void ifZero_increasesInQuality() {
             Item[] items = new Item[] { new Item("Aged Brie", 5, 0) };
             GildedRose app = new GildedRose(items);
             app.updateQuality();
-            assertEquals(0, app.items[0].quality);
+            assertEquals(1, app.items[0].quality);
             assertEquals(4, app.items[0].sellIn);
         }
 
@@ -89,17 +89,19 @@ class GildedRoseTest {
             GildedRose app = new GildedRose(items);
             app.updateQuality();
             assertEquals(80, app.items[0].quality);
-            assertEquals(4, app.items[0].sellIn);
+            assertEquals(5, app.items[0].sellIn);
         }
 
         @Test
-        public void minimumQualityIsZero() {
+        //todo
+        public void ifZero_staysTheSame() {
             Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 0) };
             GildedRose app = new GildedRose(items);
             app.updateQuality();
             assertEquals(0, app.items[0].quality);
-            assertEquals(4, app.items[0].sellIn);
+            assertEquals(5, app.items[0].sellIn);
         }
+
     }
 
     @Nested
@@ -142,12 +144,12 @@ class GildedRoseTest {
         }
 
         @Test
-        public void minimumQualityIsZero() {
-            Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 0) };
+        public void ifZero_increasesInQuality() {
+            Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 0) };
             GildedRose app = new GildedRose(items);
             app.updateQuality();
-            assertEquals(0, app.items[0].quality);
-            assertEquals(4, app.items[0].sellIn);
+            assertEquals(1, app.items[0].quality);
+            assertEquals(10, app.items[0].sellIn);
         }
 
     }
