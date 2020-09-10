@@ -8,7 +8,21 @@ public class BackstageTicket extends Item {
 
     @Override
     public void updateQuality() {
+
         this.sellIn -= 1;
-        this.quality += 1;
+
+        if(isPastSellByDate()) {
+            this.quality = 0;
+        } else {
+            if(this.quality < 50) {
+                increaseQuality();
+            }
+            if (this.sellIn < 10) {
+                increaseQuality();
+            }
+            if (this.sellIn < 5) {
+                increaseQuality();
+            }
+        }
     }
 }
