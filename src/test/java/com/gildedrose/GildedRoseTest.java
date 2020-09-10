@@ -69,6 +69,15 @@ class GildedRoseTest {
             assertEquals(4, app.items[0].sellIn);
         }
 
+        @Test
+        public void afterSellbyDate_increasesInQualityByTwo() {
+            Item[] items = new Item[] { new Item("Aged Brie", 0, 5) };
+            GildedRose app = new GildedRose(items);
+            app.updateQuality();
+            assertEquals(7, app.items[0].quality);
+            assertEquals(-1, app.items[0].sellIn);
+        }
+
     }
 
     @Nested
