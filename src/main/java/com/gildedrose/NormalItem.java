@@ -8,7 +8,16 @@ public class NormalItem extends Item{
 
     @Override
     public void updateQuality() {
+
         this.sellIn -= 1;
-        this.quality += 1;
+
+        if(isPastSellByDate()) {
+            if(this.quality > 0) {
+                reduceQuality();
+            }
+        }
+        if(this.quality > 0) {
+            reduceQuality();
+        }
     }
 }
