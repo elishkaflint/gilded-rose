@@ -16,6 +16,14 @@ public class Item {
 
     public void updateQuality() {}
 
+    boolean isPastSellByDate() {
+        return this.sellIn < 0;
+    }
+
+    void increaseQuality() {
+        this.quality += 1;
+    }
+
    @Override
    public String toString() {
         return this.name + ", " + this.sellIn + ", " + this.quality;
