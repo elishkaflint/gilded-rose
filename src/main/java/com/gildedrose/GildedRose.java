@@ -8,11 +8,12 @@ class GildedRose {
     }
 
     public void updateQuality() {
+
         for (int i = 0; i < items.length; i++) {
-            if (!items[i].name.equals("Aged Brie")
-                    && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+
+            if (!isAgedBrie(i) && !isBackstagePass(i)) {
                 if (items[i].quality > 0) {
-                    if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                    if (!isSulfuras(i)) {
                         items[i].quality = items[i].quality - 1;
                     }
                 }
@@ -20,7 +21,7 @@ class GildedRose {
                 if (items[i].quality < 50) {
                     items[i].quality = items[i].quality + 1;
 
-                    if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+                    if (isBackstagePass(i)) {
                         if (items[i].sellIn < 11) {
                             if (items[i].quality < 50) {
                                 items[i].quality = items[i].quality + 1;
@@ -36,15 +37,15 @@ class GildedRose {
                 }
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!isSulfuras(i)) {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
-            if (items[i].sellIn < 0) {
-                if (!items[i].name.equals("Aged Brie")) {
-                    if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
+            if (isPastSellByDate(i)) {
+                if (!isAgedBrie(i)) {
+                    if (!isBackstagePass(i)) {
                         if (items[i].quality > 0) {
-                            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+                            if (!isSulfuras(i)) {
                                 items[i].quality = items[i].quality - 1;
                             }
                         }
@@ -58,5 +59,21 @@ class GildedRose {
                 }
             }
         }
+    }
+
+    private boolean isAgedBrie(int i) {
+        return items[i].name.equals("Aged Brie");
+    }
+
+    private boolean isBackstagePass(int i) {
+        return items[i].name.equals("Backstage passes to a TAFKAL80ETC concert");
+    }
+
+    private boolean isSulfuras(int i) {
+        return items[i].name.equals("Sulfuras, Hand of Ragnaros");
+    }
+
+    private boolean isPastSellByDate(int i) {
+        return items[i].sellIn < 0;
     }
 }

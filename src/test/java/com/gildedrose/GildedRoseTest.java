@@ -61,6 +61,15 @@ class GildedRoseTest {
     }
 
     @Test
+    public void sulfuras_qualityCanBeMoreThanFifty() {
+        Item[] items = new Item[] { new Item("Aged Brie", 5, 80) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals(80, app.items[0].quality);
+        assertEquals(4, app.items[0].sellIn);
+    }
+
+    @Test
     public void backstagePasses_whenSellInMoreThan10Days_increaseByOne() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 5) };
         GildedRose app = new GildedRose(items);
