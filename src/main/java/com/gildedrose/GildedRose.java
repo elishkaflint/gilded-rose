@@ -13,7 +13,9 @@ class GildedRose {
 
             if(isSulfuras(i)) {
                 continue;
-            } else if(isAgedBrie(i)) {
+            }
+
+            if(isAgedBrie(i)) {
                 if(items[i].quality < 50) {
                     increaseQuality(i);
                 }
@@ -34,14 +36,12 @@ class GildedRose {
             items[i].sellIn = items[i].sellIn - 1;
 
             if (isPastSellByDate(i)) {
-                if (!isAgedBrie(i)) {
-                    if (!isBackstagePass(i)) {
-                        reduceQuality(i);
-                   } else {
-                        items[i].quality = items[i].quality - items[i].quality;
-                    }
-                } else {
+                if(isAgedBrie(i)) {
                     increaseQuality(i);
+                } else if(isBackstagePass(i)) {
+                    reduceQualityToZero(i);
+                } else {
+                    reduceQuality(i);
                 }
             }
         }
@@ -71,6 +71,10 @@ class GildedRose {
 
     private void increaseQuality(int i) {
         items[i].quality = items[i].quality + 1;
+    }
+
+    private void reduceQualityToZero(int i) {
+        items[i].quality = items[i].quality - items[i].quality;
     }
 
 }
