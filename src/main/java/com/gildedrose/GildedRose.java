@@ -11,11 +11,13 @@ class GildedRose {
 
         for (int i = 0; i < items.length; i++) {
 
+            if(isSulfuras(i)) {
+                continue;
+            }
+
             if (!isAgedBrie(i) && !isBackstagePass(i)) {
                 if (items[i].quality > 0) {
-                    if (!isSulfuras(i)) {
-                        items[i].quality = items[i].quality - 1;
-                    }
+                    items[i].quality = items[i].quality - 1;
                 }
             } else {
                 if (items[i].quality < 50) {
@@ -37,17 +39,13 @@ class GildedRose {
                 }
             }
 
-            if (!isSulfuras(i)) {
-                items[i].sellIn = items[i].sellIn - 1;
-            }
+            items[i].sellIn = items[i].sellIn - 1;
 
             if (isPastSellByDate(i)) {
                 if (!isAgedBrie(i)) {
                     if (!isBackstagePass(i)) {
                         if (items[i].quality > 0) {
-                            if (!isSulfuras(i)) {
-                                items[i].quality = items[i].quality - 1;
-                            }
+                            items[i].quality = items[i].quality - 1;
                         }
                     } else {
                         items[i].quality = items[i].quality - items[i].quality;
