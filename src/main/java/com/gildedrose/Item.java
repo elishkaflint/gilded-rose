@@ -14,7 +14,7 @@ public class Item {
         this.quality = quality;
     }
 
-    public void updateQuality() {}
+    public void updateQuality() {};
 
     boolean isPastSellByDate() {
         return this.sellIn < 0;

@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import static com.gildedrose.ItemProvider.getItem;
+
 class GildedRose {
     Item[] items;
 
@@ -9,7 +11,9 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
-            items[i].updateQuality();
+            Item item = getItem(items[i]);
+            item.updateQuality();
+            items[i] = item;
         }
     }
 
