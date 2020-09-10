@@ -24,37 +24,4 @@ class GildedRoseTest {
 
     }
 
-    @Nested
-    public class Sulfuras {
-
-        @Test
-        public void staysTheSame() {
-            Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 5) };
-            GildedRose app = new GildedRose(items);
-            app.updateQuality();
-            assertEquals(5, app.items[0].quality);
-            assertEquals(5, app.items[0].sellIn);
-        }
-
-        @Test
-        public void qualityCanBeMoreThanFifty() {
-            Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 80) };
-            GildedRose app = new GildedRose(items);
-            app.updateQuality();
-            assertEquals(80, app.items[0].quality);
-            assertEquals(5, app.items[0].sellIn);
-        }
-
-        @Test
-        //todo
-        public void ifZero_staysTheSame() {
-            Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", 5, 0) };
-            GildedRose app = new GildedRose(items);
-            app.updateQuality();
-            assertEquals(0, app.items[0].quality);
-            assertEquals(5, app.items[0].sellIn);
-        }
-
-    }
-
 }
