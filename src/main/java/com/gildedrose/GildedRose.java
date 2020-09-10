@@ -15,35 +15,40 @@ class GildedRose {
                 continue;
             }
 
+            items[i].sellIn = items[i].sellIn - 1;
+
             if(isAgedBrie(i)) {
                 if(items[i].quality < 50) {
+                    if(isPastSellByDate(i)) {
+                        if(items[i].quality < 50) {
+                            increaseQuality(i);
+                        }
+                    }
                     increaseQuality(i);
                 }
+
             } else if(isBackstagePass(i)) {
-                if(items[i].quality < 50) {
-                    increaseQuality(i);
+                if(isPastSellByDate(i)) {
+                    reduceQualityToZero(i);
+                } else {
+                    if(items[i].quality < 50) {
+                        increaseQuality(i);
+                    }
+                    if (items[i].sellIn < 10) {
+                        increaseQuality(i);
+                    }
+                    if (items[i].sellIn < 5) {
+                        increaseQuality(i);
+                    }
                 }
-                if (items[i].sellIn < 11) {
-                    increaseQuality(i);
-                }
-                if (items[i].sellIn < 6) {
-                    increaseQuality(i);
-                }
+
             } else {
+                if(isPastSellByDate(i)) {
+                    reduceQuality(i);
+                }
                 reduceQuality(i);
             }
 
-            items[i].sellIn = items[i].sellIn - 1;
-
-            if (isPastSellByDate(i)) {
-                if(isAgedBrie(i)) {
-                    increaseQuality(i);
-                } else if(isBackstagePass(i)) {
-                    reduceQualityToZero(i);
-                } else {
-                    reduceQuality(i);
-                }
-            }
         }
     }
 
