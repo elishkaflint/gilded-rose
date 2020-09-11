@@ -20,12 +20,12 @@ public class Item {
         return this.sellIn < 0;
     }
 
-    void increaseQualityBy(int amount) {
-        this.quality += amount;
+    void increaseQuality() {
+        this.quality += 1;
     }
 
-    void reduceQualityBy(int amount) {
-        this.quality -= amount;
+    void reduceQuality() {
+        this.quality -= 1;
     }
 
    @Override

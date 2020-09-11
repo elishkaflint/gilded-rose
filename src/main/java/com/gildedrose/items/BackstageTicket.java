@@ -15,16 +15,16 @@ public class BackstageTicket extends Item {
             this.quality = 0;
         } else {
             if(this.quality < 50) {
-                increaseQualityBy(1);
+                increaseQuality();
             }
             if (this.sellIn < 10) {
                 if(this.quality < 50) {
-                    increaseQualityBy(1);
+                    increaseQuality();
                 }
             }
             if (this.sellIn < 5) {
                 if(this.quality < 50) {
-                    increaseQualityBy(1);
+                    increaseQuality();
                 }
             }
         }
