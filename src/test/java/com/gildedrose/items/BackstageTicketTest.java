@@ -66,4 +66,16 @@ public class BackstageTicketTest {
         assertEquals(10, backstageTicket.sellIn);
     }
 
+    @Test
+    public void afterFifty_doesNotIncreaseInQuality() {
+
+        Item item = new Item("Backstage passes to a TAFKAL80ETC concert", 3, 49);
+        Item backstageTicket = new BackstageTicket(item);
+
+        backstageTicket.updateQuality();
+
+        assertEquals(50, backstageTicket.quality);
+        assertEquals(2, backstageTicket.sellIn);
+    }
+
 }
