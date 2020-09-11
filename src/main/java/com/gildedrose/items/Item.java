@@ -8,6 +8,9 @@ public class Item {
 
     public int quality;
 
+    public int MAX_QUALITY = 50;
+    public int MIN_QUALITY = 0;
+
     public Item(String name, int sellIn, int quality) {
         this.name = name;
         this.sellIn = sellIn;
@@ -21,13 +24,13 @@ public class Item {
     }
 
     void increaseQuality() {
-        if(this.quality < 50) {
+        if(this.quality < MAX_QUALITY) {
             this.quality += 1;
         }
     }
 
     void reduceQuality() {
-        if(this.quality > 0) {
+        if(this.quality > MIN_QUALITY) {
             this.quality -= 1;
         }
     }

@@ -11,9 +11,7 @@ public class AgedBrie extends Item {
 
         reduceSellIn();
 
-        if(this.quality < 50) {
-            increaseQuality();
-        }
+        increaseQuality();
 
         if(isPastSellByDate()) {
             increaseQuality();
