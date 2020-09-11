@@ -14,10 +14,9 @@ class GildedRoseTest {
         Item backstageTicket = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 5);
         Item normalItem = new Item("foo", 1, 10);
         Item sulphuras = new Item("Sulfuras, Hand of Ragnaros", 5, 5);
-
         Item[] items = new Item[] {agedBrie, backstageTicket, normalItem, sulphuras};
-
         GildedRose app = new GildedRose(items);
+
         app.updateQuality();
 
         assertEquals(6, app.items[0].quality);

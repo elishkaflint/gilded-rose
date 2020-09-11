@@ -2,8 +2,8 @@ package com.gildedrose.items;
 
 public class Sulphuras extends Item {
 
-    public Sulphuras(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public Sulphuras(Item item) {
+        super(item.name, item.sellIn, item.quality);
     }
 
 }
