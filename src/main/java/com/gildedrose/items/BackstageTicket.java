@@ -9,7 +9,7 @@ public class BackstageTicket extends Item {
     @Override
     public void updateQuality() {
 
-        this.sellIn -= 1;
+        reduceSellIn();
 
         if(isPastSellByDate()) {
             this.quality = 0;

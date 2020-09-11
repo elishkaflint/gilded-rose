@@ -9,7 +9,7 @@ public class AgedBrie extends Item {
     @Override
     public void updateQuality() {
 
-        this.sellIn -= 1;
+        reduceSellIn();
 
         if(this.quality < 50) {
             increaseQuality();

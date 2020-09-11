@@ -8,7 +8,7 @@ public class ConjuredItem extends Item {
 
     public void updateQuality() {
 
-        this.sellIn -= 1;
+        reduceSellIn();
 
         reduceQuality();
         reduceQuality();

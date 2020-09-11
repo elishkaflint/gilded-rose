@@ -9,12 +9,12 @@ public class NormalItem extends Item{
     @Override
     public void updateQuality() {
 
-        this.sellIn -= 1;
+        reduceSellIn();
 
         reduceQuality();
 
         if(isPastSellByDate()) {
-                reduceQuality();
+            reduceQuality();
         }
 
     }
