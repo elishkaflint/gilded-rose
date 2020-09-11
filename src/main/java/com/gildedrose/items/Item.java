@@ -21,11 +21,15 @@ public class Item {
     }
 
     void increaseQuality() {
-        this.quality += 1;
+        if(this.quality < 50) {
+            this.quality += 1;
+        }
     }
 
     void reduceQuality() {
-        this.quality -= 1;
+        if(this.quality > 0) {
+            this.quality -= 1;
+        }
     }
 
    @Override

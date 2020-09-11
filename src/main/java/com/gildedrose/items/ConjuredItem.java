@@ -10,21 +10,12 @@ public class ConjuredItem extends Item {
 
         this.sellIn -= 1;
 
-        if(this.quality > 0) {
-            reduceQuality();
-        }
-
-        if(this.quality > 0) {
-            reduceQuality();
-        }
+        reduceQuality();
+        reduceQuality();
 
         if(isPastSellByDate()) {
-            if(this.quality > 0) {
-                reduceQuality();
-            }
-            if(this.quality > 0) {
-                reduceQuality();
-            }
+            reduceQuality();
+            reduceQuality();
         }
 
     }

@@ -14,18 +14,12 @@ public class BackstageTicket extends Item {
         if(isPastSellByDate()) {
             this.quality = 0;
         } else {
-            if(this.quality < 50) {
+            increaseQuality();
+            if (this.sellIn < 10) {
                 increaseQuality();
             }
-            if (this.sellIn < 10) {
-                if(this.quality < 50) {
-                    increaseQuality();
-                }
-            }
             if (this.sellIn < 5) {
-                if(this.quality < 50) {
-                    increaseQuality();
-                }
+                increaseQuality();
             }
         }
     }
