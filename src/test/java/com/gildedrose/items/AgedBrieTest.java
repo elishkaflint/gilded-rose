@@ -1,6 +1,5 @@
-package com.gildedrose;
+package com.gildedrose.items;
 
-import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

@@ -1,5 +1,7 @@
 package com.gildedrose;
 
+import com.gildedrose.items.Item;
+
 import static com.gildedrose.ItemProvider.getItem;
 
 class GildedRose {

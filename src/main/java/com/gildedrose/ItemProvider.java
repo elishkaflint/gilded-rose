@@ -1,5 +1,11 @@
 package com.gildedrose;
 
+import com.gildedrose.items.AgedBrie;
+import com.gildedrose.items.BackstageTicket;
+import com.gildedrose.items.Item;
+import com.gildedrose.items.NormalItem;
+import com.gildedrose.items.Sulphuras;
+
 public class ItemProvider {
 
     public static Item getItem(Item item) {

@@ -1,5 +1,7 @@
-package com.gildedrose;
+package com.gildedrose.items;
 
+import com.gildedrose.items.BackstageTicket;
+import com.gildedrose.items.Item;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
