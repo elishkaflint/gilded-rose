@@ -2,6 +2,7 @@ package com.gildedrose;
 
 import com.gildedrose.items.AgedBrie;
 import com.gildedrose.items.BackstageTicket;
+import com.gildedrose.items.ConjuredItem;
 import com.gildedrose.items.Item;
 import com.gildedrose.items.NormalItem;
 import com.gildedrose.items.Sulphuras;
@@ -16,6 +17,8 @@ public class ItemProvider {
                 return new BackstageTicket(item);
             case "Sulfuras, Hand of Ragnaros":
                 return new Sulphuras(item);
+            case "Conjured Mana Cake":
+                return new ConjuredItem(item);
             default:
                 return new NormalItem(item);
         }

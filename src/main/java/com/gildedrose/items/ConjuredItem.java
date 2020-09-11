@@ -6,5 +6,26 @@ public class ConjuredItem extends Item {
         super(item.name, item.sellIn, item.quality);
     }
 
+    public void updateQuality() {
 
+        this.sellIn -= 1;
+
+        if(this.quality > 0) {
+            reduceQualityBy(1);
+        }
+
+        if(this.quality > 0) {
+            reduceQualityBy(1);
+        }
+
+        if(isPastSellByDate()) {
+            if(this.quality > 0) {
+                reduceQualityBy(1);
+            }
+            if(this.quality > 0) {
+                reduceQualityBy(1);
+            }
+        }
+
+    }
 }

@@ -32,30 +32,7 @@ class GildedRoseTest {
         assertEquals("Backstage passes to a TAFKAL80ETC concert, 14, 21", app.items[5].toString());
         assertEquals("Backstage passes to a TAFKAL80ETC concert, 9, 50", app.items[6].toString());
         assertEquals("Backstage passes to a TAFKAL80ETC concert, 4, 50", app.items[7].toString());
-        assertEquals("Conjured Mana Cake, 2, 5", app.items[8].toString());
-
-    }
-
-    @Test
-    public void testMultipleItems() {
-
-        Item agedBrie = new Item("Aged Brie", 5, 5);
-        Item backstageTicket = new Item("Backstage passes to a TAFKAL80ETC concert", 11, 5);
-        Item normalItem = new Item("foo", 1, 10);
-        Item sulphuras = new Item("Sulfuras, Hand of Ragnaros", 5, 5);
-        Item[] items = new Item[] {agedBrie, backstageTicket, normalItem, sulphuras};
-        GildedRose app = new GildedRose(items);
-
-        app.updateQuality();
-
-        assertEquals(6, app.items[0].quality);
-        assertEquals(4, app.items[0].sellIn);
-        assertEquals(6, app.items[1].quality);
-        assertEquals(10, app.items[1].sellIn);
-        assertEquals(9, app.items[2].quality);
-        assertEquals(0, app.items[2].sellIn);
-        assertEquals(5, app.items[3].quality);
-        assertEquals(5, app.items[3].sellIn);
+        assertEquals("Conjured Mana Cake, 2, 4", app.items[8].toString());
 
     }
 
