@@ -12,12 +12,12 @@ public class NormalItem extends Item{
         this.sellIn -= 1;
 
         if(this.quality > 0) {
-            reduceQuality();
+            reduceQualityBy(1);
         }
 
         if(isPastSellByDate()) {
             if(this.quality > 0) {
-                reduceQuality();
+                reduceQualityBy(1);
             }
         }
 
